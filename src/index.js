@@ -2,14 +2,15 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { Counter } from 'redux/reducer';
+import { Game, initialGame } from './redux/reducer';
+import './stylesheet.scss';
 
-import App from './containers/App.js';
+import GameField from 'components/GameField';
 
 const root = document.getElementById('app');
 const store = createStore(
-  Counter,
-  { counter: 0 },
+  Game,
+  initialGame,
   window.devToolsExtension ? window.devToolsExtension() : undefined
 );
 
@@ -17,7 +18,7 @@ function render() {
   ReactDOM.render(
     <Provider store={store}>
       <div>
-        <App />
+        <GameField />
       </div>
     </Provider>,
     root
