@@ -1,0 +1,20 @@
+{ "extends": "eslint-config-airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "plugins": [
+    "react", "import"
+  ],
+  "settings": {
+    "import/parser": "babel-eslint",
+    "import/resolve": {
+      moduleDirectory: ["node_modules", "src"]
+    }
+  },
+  "globals": {
+    "__VARNAME__": true
+  }
+}
